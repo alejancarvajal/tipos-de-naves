@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TiposDeNavesApplication {
+public class TiposDeNavesAplicacion {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TiposDeNavesApplication.class, args);
+		SpringApplication.run(TiposDeNavesAplicacion.class, args);
 	}
 
 }
