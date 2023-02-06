@@ -1,25 +1,27 @@
 package com.naves.tiposdenaves.dominio.servicio;
 
 import com.naves.tiposdenaves.dominio.dto.NaveD;
+import com.naves.tiposdenaves.dominio.dto.NaveEspacial;
 import com.naves.tiposdenaves.dominio.repositorio.NaveDRepositorio;
-import com.naves.tiposdenaves.persistencia.entidades.Nave;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class NaveDServicio {
-    @Autowired
-    private NaveDRepositorio naveDRepositorio;
+
+    private final NaveDRepositorio naveDRepositorio;
+
+    public NaveDServicio(NaveDRepositorio naveDRepositorio) {
+        this.naveDRepositorio = naveDRepositorio;
+    }
 
     public List<NaveD> getAll(){
         return  naveDRepositorio.getAll();
 
     }
 
-
-    public NaveD crearNave(NaveD nave) {
+    public NaveEspacial crearNave(NaveEspacial nave) {
         return naveDRepositorio.crearNave(nave);
 
     }

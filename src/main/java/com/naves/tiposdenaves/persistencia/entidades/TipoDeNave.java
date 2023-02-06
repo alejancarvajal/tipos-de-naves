@@ -15,8 +15,8 @@ public class TipoDeNave {
     private Integer id;
     private String tipo;
 
-    @ManyToOne
-    @JoinColumn(name = "id_nave")
+    @OneToOne
+    @JoinColumn(name = "id_nave", referencedColumnName = "id")
     private Nave nave;
 
 

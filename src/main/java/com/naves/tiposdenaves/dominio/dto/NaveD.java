@@ -1,7 +1,7 @@
 package com.naves.tiposdenaves.dominio.dto;
 
 
-public class NaveD {
+public abstract class NaveD {
 
     private Integer id;
     private String nombre;
@@ -13,6 +13,24 @@ public class NaveD {
     private String combustible;
     private Double orbita;
     private Integer cantidadTripulacion;
+
+    public NaveD() {
+    }
+
+    public NaveD(final String nombre, final String pais, final Integer altura, final Double empuje, final Double cantidadCargaOrbita, final Boolean estado,
+                 final String combustible, final Double orbita, final Integer cantidadTripulacion)
+    {
+
+        this.nombre = nombre;
+        this.pais = pais;
+        this.altura = altura;
+        this.empuje = empuje;
+        this.cantidadCargaOrbita = cantidadCargaOrbita;
+        this.estado = estado;
+        this.combustible = combustible;
+        this.orbita = orbita;
+        this.cantidadTripulacion = cantidadTripulacion;
+    }
 
     public Integer getId() {
         return id;

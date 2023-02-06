@@ -1,11 +1,13 @@
 package com.naves.tiposdenaves.persistencia;
 
 import com.naves.tiposdenaves.dominio.dto.NaveD;
+import com.naves.tiposdenaves.dominio.dto.NaveDeCombate;
+import com.naves.tiposdenaves.dominio.dto.NaveEspacial;
 import com.naves.tiposdenaves.dominio.repositorio.NaveDRepositorio;
 import com.naves.tiposdenaves.persistencia.crud.NaveCrudRepositorio;
 import com.naves.tiposdenaves.persistencia.entidades.Nave;
 import com.naves.tiposdenaves.persistencia.mappeador.NaveDMapeador;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.naves.tiposdenaves.persistencia.mappeador.NaveEspacialMapeador;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,22 +15,28 @@ import java.util.stream.Collectors;
 
 @Repository
 public class NaveRepositorio implements NaveDRepositorio {
-    @Autowired
-    private NaveDMapeador mapper;
-    @Autowired
-    private NaveCrudRepositorio  naveCrudRepositorio;
+
+    private final NaveDMapeador naveDMapeador;
+    private final NaveEspacialMapeador naveEspacialMapeador;
+    private final NaveCrudRepositorio  naveCrudRepositorio;
+
+    public NaveRepositorio(NaveDMapeador naveDMapeador, NaveEspacialMapeador naveEspacialMapeador, NaveCrudRepositorio naveCrudRepositorio) {
+        this.naveDMapeador = naveDMapeador;
+        this.naveEspacialMapeador = naveEspacialMapeador;
+        this.naveCrudRepositorio = naveCrudRepositorio;
+    }
 
     public List<NaveD> getAll(){
         List<Nave> nave =(List<Nave>) naveCrudRepositorio.findAll();
-        return nave.stream().map(nave1 -> mapper.toNaveD(nave1)).collect(Collectors.toList());
-
+        return nave.stream().map(naveDMapeador::toNaveEspacial).collect(Collectors.toList());
 
     }
 
     @Override
-    public NaveD crearNave(NaveD naveD) {
-        Nave nave = naveCrudRepositorio.save(mapper.toNave(naveD));
-        return mapper.toNaveD(nave);
+    public NaveEspacial crearNave(NaveEspacial naveD) {
+        NaveDeCombate naveDeCombate = naveEspacialMapeador.naveEspacialtoNaveDeCombate(naveD);
+        Nave nave = naveCrudRepositorio.save(naveDMapeador.toNave(naveD));
+        return naveDMapeador.toNaveEspacial(nave);
     }
 
 
