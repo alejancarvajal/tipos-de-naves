@@ -32,4 +32,10 @@ public class TipoDeNaveDControlador {
         tipoDeNaveDServicio.crearTipoDeNave(tipoDeNaveD);
     }
 
+    @GetMapping("/consultar/{tipo}")
+    public List<TipoDeNaveD> busquedaPorTipo(@PathVariable String tipo) {
+       return tipoDeNaveDServicio.busquedaDeNavesPorTipo(tipo);
+    }
+
+
 }

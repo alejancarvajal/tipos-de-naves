@@ -12,4 +12,7 @@ public interface NaveDRepositorio {
 
     NaveEspacial crearNave(NaveEspacial nave);
 
+    List<NaveEspacial> busquedaDeNavePorNombre(String nombre);
+
+    List<NaveEspacial> busquedaDeNavePorPais(String pais);
 }

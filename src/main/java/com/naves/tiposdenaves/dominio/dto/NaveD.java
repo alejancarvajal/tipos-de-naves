@@ -18,8 +18,7 @@ public abstract class NaveD {
     }
 
     public NaveD(final String nombre, final String pais, final Integer altura, final Double empuje, final Double cantidadCargaOrbita, final Boolean estado,
-                 final String combustible, final Double orbita, final Integer cantidadTripulacion)
-    {
+                 final String combustible, final Double orbita, final Integer cantidadTripulacion) {
 
         this.nombre = nombre;
         this.pais = pais;
@@ -112,4 +111,20 @@ public abstract class NaveD {
         this.cantidadTripulacion = cantidadTripulacion;
     }
 
+    public void despegar(String nombre) {
+        System.out.println("Iniciando configuraciones para el despegue");
+        System.out.println("Configuraciones terminadas inciando despegue de la nave " + nombre + " en 3");
+        System.out.println("2");
+        System.out.println("1");
+        System.out.println("Ignicion de propulsores");
+        System.out.println("Lanzamiento completado");
+    }
+
+    ;
+
+    public void aterrizar(String nombre) {
+        System.out.println("Iniciando configuraciones para el aterrizaje de la nave "+nombre);
+    }
+
+    ;
 }

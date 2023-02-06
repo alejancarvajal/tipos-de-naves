@@ -25,4 +25,12 @@ public class NaveDServicio {
         return naveDRepositorio.crearNave(nave);
 
     }
+
+    public List<NaveEspacial> busquedaDeNavesPorNombre(String nombre) {
+        return naveDRepositorio.busquedaDeNavePorNombre(nombre);
+    }
+
+    public List<NaveEspacial> busquedaDeNavesPorPais(String pais) {
+       return naveDRepositorio.busquedaDeNavePorPais(pais);
+    }
 }

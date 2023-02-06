@@ -13,21 +13,29 @@ import java.util.List;
 @RequestMapping("/naves")
 public class NaveDControlador {
 
-    private NaveDServicio naveDService;
+    private NaveDServicio naveDServicio;
 
-    public NaveDControlador(NaveDServicio naveDService) {
-        this.naveDService = naveDService;
+    public NaveDControlador(NaveDServicio naveDServicio) {
+        this.naveDServicio = naveDServicio;
     }
 
     @PostMapping("/creacion")
     public ResponseEntity<NaveD> creacionNaves(@RequestBody NaveEspacial naveD) {
 
-        return new ResponseEntity<>(naveDService.crearNave(naveD), HttpStatus.OK);
+        return new ResponseEntity<>(naveDServicio.crearNave(naveD), HttpStatus.OK);
     }
 
     @GetMapping("/lista")
     public ResponseEntity<List<NaveD>> listaNaves() {
-        return new ResponseEntity<>(naveDService.getAll(), HttpStatus.OK);
+        return new ResponseEntity<>(naveDServicio.getAll(), HttpStatus.OK);
+    }
+    @GetMapping("/consultar/nombre/{nombre}")
+    public List<NaveEspacial> busquedaPorNombre(@PathVariable String nombre) {
+        return naveDServicio.busquedaDeNavesPorNombre(nombre);
     }
 
+    @GetMapping("/consultar/pais/{pais}")
+    public List<NaveEspacial> busquedaPorPais(@PathVariable String pais) {
+        return naveDServicio.busquedaDeNavesPorPais(pais);
+    }
 }
