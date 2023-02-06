@@ -1,13 +1,18 @@
 package com.naves.tiposdenaves.dominio.dto;
 
-import com.naves.tiposdenaves.persistencia.entidades.Nave;
-
 
 public class TipoDeNaveD {
     private Integer id;
     private String tipo;
-    private NaveD nave;
+    private NaveEspacial nave;
 
+    public TipoDeNaveD() {
+    }
+
+    public TipoDeNaveD( String tipo, NaveEspacial nave) {
+        this.tipo = tipo;
+        this.nave = nave;
+    }
 
     public Integer getId() {
         return id;
@@ -25,11 +30,11 @@ public class TipoDeNaveD {
         this.tipo = tipo;
     }
 
-    public NaveD getNave() {
+    public NaveEspacial getNave() {
         return nave;
     }
 
-    public void setNave(NaveD nave) {
+    public void setNave(NaveEspacial nave) {
         this.nave = nave;
     }
 }
