@@ -60,12 +60,11 @@ public class Menu {
 
     private void procesoConsulta(Scanner scanner) {
         int subOpcionConsulta = 0;
-        while (subOpcionConsulta != 3) {
+        while (subOpcionConsulta != 2) {
             System.out.println("Submenu consultar:");
             System.out.println("Ingresa el tipo de consulta:");
             System.out.println("1. simple ");
-            System.out.println("2. avanzada ");
-            System.out.println("3. Regresar");
+            System.out.println("2. Regresar");
             System.out.print("Ingresa la opcion : ");
             subOpcionConsulta = scanner.nextInt();
             switch (subOpcionConsulta) {
@@ -74,9 +73,6 @@ public class Menu {
                     procesoConsultaSimple("Submenu busqueda simple:", "Selecciona el tipo de consulta");
                     break;
                 case 2:
-                    System.out.println("Consulta avanzada");
-                    break;
-                case 3:
                     System.out.println("Regresando");
                 default:
                     System.out.println("Opcion invalida");
@@ -114,26 +110,32 @@ public class Menu {
                         switch (subOpcion) {
                             case 1:
                                 tipo = TipoDeNaveEspacial.LANZADERA.name();
+                                consumoServicioConsulta(TIPO_DE_NAVE, CONSULTAR, tipo);
                                 break;
                             case 2:
                                 tipo = TipoDeNaveEspacial.COMBATE.name();
+                                consumoServicioConsulta(TIPO_DE_NAVE, CONSULTAR, tipo);
                                 break;
                             case 3:
                                 tipo = TipoDeNaveEspacial.RESCATE.name();
+                                consumoServicioConsulta(TIPO_DE_NAVE, CONSULTAR, tipo);
                                 break;
                             case 4:
                                 tipo = TipoDeNaveEspacial.NOTRIPULADA.name();
+                                consumoServicioConsulta(TIPO_DE_NAVE, CONSULTAR, tipo);
                                 break;
                             case 5:
                                 tipo = TipoDeNaveEspacial.TRIPULADA.name();
+                                consumoServicioConsulta(TIPO_DE_NAVE, CONSULTAR, tipo);;
                                 break;
                             case 6:
                                 System.out.println("Regresando");
+
                                 break;
                             default:
                                 System.out.println("Opcion invalida");
                         }
-                        consumoServicioConsulta(TIPO_DE_NAVE, CONSULTAR, tipo);
+
                     }
 
                     break;

@@ -37,7 +37,7 @@ public class NaveDeRescate extends NaveEspacial implements TripuladasInterfaz, N
 
     @Override
     public void curacionHeridos() {
-        System.out.println("Inicien el protocolo de de emergencia");
+        System.out.println("Inicien el protocolo de emergencia");
         System.out.println("Inicien triage de heridos");
     }
 }
