@@ -111,7 +111,7 @@ public abstract class NaveD {
         this.cantidadTripulacion = cantidadTripulacion;
     }
 
-    void despegar(String nombre) {
+    public void despegar(String nombre) {
         System.out.println("Iniciando configuraciones para el despegue");
         System.out.println("Configuraciones terminadas inciando despegue de la nave " + nombre + " en 3");
         System.out.println("2");
@@ -122,7 +122,7 @@ public abstract class NaveD {
 
     ;
 
-    void aterrizar(String nombre) {
+    public void aterrizar(String nombre) {
         System.out.println("Iniciando configuraciones para el aterrizaje de la nave "+nombre);
     }
 

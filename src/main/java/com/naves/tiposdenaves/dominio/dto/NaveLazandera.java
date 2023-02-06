@@ -8,7 +8,7 @@ public class NaveLazandera extends NaveEspacial implements LanzaderaInterfaz {
     }
 
     @Override
-    void despegar(String nombre) {
+    public void despegar(String nombre) {
         super.despegar(nombre);
     }
 

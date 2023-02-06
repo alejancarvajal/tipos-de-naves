@@ -4,8 +4,8 @@ import com.naves.tiposdenaves.dominio.intefaces.NavegacionInterfaz;
 import com.naves.tiposdenaves.dominio.intefaces.TripuladasInterfaz;
 
 public class NavesTripluladas extends NaveEspacial implements TripuladasInterfaz, NavegacionInterfaz {
-    public NavesTripluladas(String nombre, String pais, Integer altura, Double empuje, Double cantidadCargaOrbita, Boolean estado, String combustible, Double orbita, Integer cantidadTripulacion) {
-        super(nombre, pais, altura, empuje, cantidadCargaOrbita, estado, combustible, orbita, cantidadTripulacion);
+    public NavesTripluladas(String nombre, String pais, Boolean estado, Double orbita, Integer cantidadTripulacion) {
+        super(nombre, pais, null, null, null, estado, null, orbita, cantidadTripulacion);
     }
 
     @Override

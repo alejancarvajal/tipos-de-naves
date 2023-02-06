@@ -26,6 +26,11 @@ public class TipoDeNaveRepositorio implements TipoDeNaveDRepositorio {
         return tipodenave.stream().map(tipoDeNaveDMapeador::toTipoDeNaveD).collect(Collectors.toList());
 
     }
+    public List<TipoDeNaveD> listaTiposDeNavesPorTipo(String tipo) {
+        List<TipoDeNave> tipodenave = tipoDeNaveCrudRepositorio.findByTipo(tipo);
+        return tipodenave.stream().map(tipoDeNaveDMapeador::toTipoDeNaveD).collect(Collectors.toList());
+
+    }
 
     @Override
     public void crearTipoDeNave(TipoDeNaveD tipoDeNaveD) {

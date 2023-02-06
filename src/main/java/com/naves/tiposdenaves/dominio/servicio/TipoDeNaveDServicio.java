@@ -21,4 +21,9 @@ public class TipoDeNaveDServicio {
     public void crearTipoDeNave(TipoDeNaveD tipoDeNaveD) {
         tipoDeNaveDRepositorio.crearTipoDeNave(tipoDeNaveD);
     }
+
+    public  List<TipoDeNaveD> busquedaDeNavesPorTipo(String tipo){
+        return tipoDeNaveDRepositorio.listaTiposDeNavesPorTipo(tipo);
+    }
+
 }

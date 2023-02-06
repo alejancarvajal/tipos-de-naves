@@ -8,4 +8,7 @@ public interface TipoDeNaveDRepositorio {
     List<TipoDeNaveD> listaTiposDeNaves();
 
     void crearTipoDeNave(TipoDeNaveD tipoDeNaveD);
+
+    List<TipoDeNaveD> listaTiposDeNavesPorTipo(String tipo);
+
 }
