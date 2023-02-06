@@ -24,7 +24,7 @@ dependencies {
 
 		exclude group: 'org.junit.vintage', module:'junit-vintage-engine'
 	}
-
+	implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5'
 
 }
 
